@@ -1,0 +1,6 @@
+acer-wmi-battery-dkms
+ai-usagebar
+google-chrome
+intellij-idea-ultimate-edition
+nbfc-linux
+nbfc-linux-debug

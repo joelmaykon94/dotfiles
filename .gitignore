@@ -1,0 +1,38 @@
+# Secrets and Environment Variables
+*.env
+*.env.*
+*.env.local
+*.local
+.zshrc.local
+.bashrc.local
+*.secret
+*.token
+
+# SSH and GPG Private Keys
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+*.pem
+*.key
+*.p12
+*.pfx
+*.asc
+*.gpg
+
+# Temporary files & editor artifacts
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Language caches
+__pycache__/
+*.pyc
+.cache/
+.npm/
+.yarn/

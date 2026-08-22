@@ -1,0 +1,5 @@
+[user]
+    name = Joel Maykon
+    email = joelmaykon94@gmail.com
+[core]
+    editor = nvim
