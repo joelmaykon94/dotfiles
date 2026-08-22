@@ -7,6 +7,9 @@ if [ -f "$HOME/.local/share/omarchy/default/bash/rc" ]; then
     source "$HOME/.local/share/omarchy/default/bash/rc"
 fi
 
+# SSH Agent Socket (Systemd)
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR:-/run/user/$UID}/ssh-agent.socket"
+
 # PATH personalizado
 export PATH="$HOME/.local/bin:$PATH"
 

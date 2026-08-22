@@ -33,6 +33,9 @@ fi
 [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# --- SSH Agent Socket (Systemd) ---
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR:-/run/user/$UID}/ssh-agent.socket"
+
 # --- Carregar segredos locais e variáveis privadas (não versionadas) ---
 if [ -f "$HOME/.zshrc.local" ]; then
     source "$HOME/.zshrc.local"
