@@ -95,6 +95,10 @@ tooltip label {
 #workspaces,
 #window,
 .modules-center,
+#cpu,
+#temperature,
+#memory,
+#custom-gpu,
 #pulseaudio,
 #network,
 #battery,
@@ -114,13 +118,21 @@ tooltip label {
   margin: 6px 8px 0px 8px;
 }
 
+#cpu,
+#temperature,
+#memory,
+#custom-gpu,
 #pulseaudio,
 #network,
 #battery,
 #clock,
 #tray {
-  padding: 0px 12px;
-  margin-left: 8px;
+  padding: 0px 10px;
+  margin-left: 6px;
+}
+
+#temperature.critical {
+  color: @color_alert;
 }
 
 /* =========
@@ -161,12 +173,12 @@ tooltip label {
 #battery,
 #network,
 #pulseaudio {
-  margin: 0px 6px;
+  margin: 0px 4px;
   padding: 0px;
 }
 
 #tray {
-  margin: 0px 0px 0px 12px;
+  margin: 0px 0px 0px 8px;
   padding: 0px;
 }
 
