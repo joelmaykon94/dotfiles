@@ -1,21 +1,25 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# set-animated-wallpaper.sh - Define um vídeo/GIF como papel de parede animado
-# Otimizado para baixo consumo de CPU/GPU e temperatura fria
+# set-animated-wallpaper.sh - Define vídeo/GIF como papel de parede animado
+# Otimização Máxima: 1080p nativo, 30 FPS e Auto-Pause quando janelas estão sobrepostas
 # ==============================================================================
 set -euo pipefail
 
 WALLPAPER_DIR="$HOME/.config/hypr/wallpapers"
 mkdir -p "$WALLPAPER_DIR"
 
+# Seleciona o arquivo 1080p otimizado prioritariamente
 if [ $# -eq 0 ]; then
-    DEFAULT_VIDEO=$(find "$WALLPAPER_DIR" -type f \( -name "*.mp4" -o -name "*.webm" -o -name "*.gif" \) | head -n 1)
-    if [ -n "$DEFAULT_VIDEO" ]; then
-        VIDEO_PATH="$DEFAULT_VIDEO"
+    if [ -f "$WALLPAPER_DIR/samurai_1080p.mp4" ]; then
+        VIDEO_PATH="$WALLPAPER_DIR/samurai_1080p.mp4"
     else
-        echo "Uso: $0 <caminho_do_video_ou_gif>"
-        echo "Coloque seus vídeos em: $WALLPAPER_DIR"
-        exit 1
+        DEFAULT_VIDEO=$(find "$WALLPAPER_DIR" -type f \( -name "*.mp4" -o -name "*.webm" -o -name "*.gif" \) | head -n 1)
+        if [ -n "$DEFAULT_VIDEO" ]; then
+            VIDEO_PATH="$DEFAULT_VIDEO"
+        else
+            echo "Coloque seus vídeos em: $WALLPAPER_DIR"
+            exit 1
+        fi
     fi
 else
     VIDEO_PATH="$1"
@@ -26,13 +30,17 @@ if [ ! -f "$VIDEO_PATH" ]; then
     exit 1
 fi
 
-echo "🎬 Ativando wallpaper animado: $VIDEO_PATH"
+echo "🎬 Ativando wallpaper animado ultraleve: $VIDEO_PATH"
 
-# Encerra instâncias anteriores do swaybg e mpvpaper
+# Encerra instâncias anteriores
 killall swaybg 2>/dev/null || true
 killall mpvpaper 2>/dev/null || true
 
-# Inicia o mpvpaper desacoplado via setsid em segundo plano permanente
-setsid mpvpaper -o "no-audio --loop-file=inf --hwdec=auto --vf=fps=30" '*' "$VIDEO_PATH" >/dev/null 2>&1 &
+# mpvpaper com as 3 flags de ultra-eficiência:
+# -p : Auto-pause quando as janelas cobrem o papel de parede (0% CPU/GPU quando trabalhando)
+# -f : Modo fork nativo desacoplado
+# --hwdec=auto : Decodificação via hardware (Vulkan)
+# no-audio, loop-file=inf
+mpvpaper -p -f -o "no-audio --loop-file=inf --hwdec=auto" '*' "$VIDEO_PATH"
 
-echo "✅ Papel de parede animado ativo!"
+echo "✅ Papel de parede animado ativo com perfil Zero-Overhead!"
