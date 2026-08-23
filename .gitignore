@@ -30,6 +30,10 @@ id_ed25519.pub
 .DS_Store
 Thumbs.db
 
+# Heavy media files (keep dotfiles repository lightweight)
+*.mp4
+*.webm
+
 # Language caches
 __pycache__/
 *.pyc
