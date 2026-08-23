@@ -37,6 +37,11 @@ if command -v starship &>/dev/null; then
     eval "$(starship init zsh)"
 fi
 
+# --- Atuin (se instalado) ---
+if command -v atuin &>/dev/null; then
+    eval "$(atuin init zsh)"
+fi
+
 # --- Zoxide (Navegação Inteligente com 'z') ---
 if command -v zoxide &>/dev/null; then
     eval "$(zoxide init zsh)"
@@ -103,6 +108,7 @@ alias grep='grep --color=auto'
 alias top='btop'
 alias lg='lazygit'
 alias ld='lazydocker'
+alias y='yazi'
 
 # --- Git Shortcuts ---
 alias g='git'
