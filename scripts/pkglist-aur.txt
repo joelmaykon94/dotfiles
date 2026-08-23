@@ -3,5 +3,6 @@ ai-usagebar
 bibata-cursor-theme-bin
 google-chrome
 intellij-idea-ultimate-edition
+mpvpaper
 nbfc-linux
 nbfc-linux-debug
