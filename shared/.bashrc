@@ -62,6 +62,8 @@ alias lg='lazygit'
 alias ld='lazydocker'
 alias top='btop'
 alias y='yazi'
+alias mem='ai-memory'
+alias mem-web='xdg-open http://127.0.0.1:49374/web'
 
 # FZF helpers
 if command -v fzf &>/dev/null; then

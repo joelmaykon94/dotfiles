@@ -109,6 +109,8 @@ alias top='btop'
 alias lg='lazygit'
 alias ld='lazydocker'
 alias y='yazi'
+alias mem='ai-memory'
+alias mem-web='xdg-open http://127.0.0.1:49374/web'
 
 # --- Git Shortcuts ---
 alias g='git'
