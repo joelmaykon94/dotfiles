@@ -12,22 +12,6 @@
 @define-color separator_color alpha(@foreground, 0.12);
 @define-color color_alert #a55555;
 
-/*
-   SPACING REFERENCE (GTK3 has no var() — keep this as a cheat sheet)
-   -------------------------------------------------------------------
-   xs:  4px
-   sm:  6px
-   md:  8px
-   lg: 12px
-   -------------------------------------------------------------------
-   radius-md:  8px
-   radius-lg: 12px
-   -------------------------------------------------------------------
-   font-base: 15px
-   font-sm:   10px
-   font-md:   16px
-*/
-
 /* =========
    GLOBALS
    ========= */
@@ -111,11 +95,11 @@ tooltip label {
 }
 
 #workspaces {
-  padding: 0px 6px;
+  padding: 0px 8px;
 }
 
 .modules-center {
-  padding: 0px 12px;
+  padding: 0px 14px;
   margin: 6px 8px 0px 8px;
 }
 
@@ -124,10 +108,20 @@ tooltip label {
 #temperature,
 #memory,
 #custom-gpu,
+#clock {
+  padding: 0px 10px;
+  margin-left: 6px;
+}
+
+/* Generous spacing for single icon modules (sound, wifi, battery) */
 #pulseaudio,
 #network,
-#battery,
-#clock,
+#battery {
+  padding: 0px 12px;
+  margin-left: 6px;
+  min-width: 24px;
+}
+
 #tray {
   padding: 0px 10px;
   margin-left: 6px;
@@ -166,22 +160,6 @@ tooltip label {
 
 #workspaces button:not(.visible) {
   opacity: 0.6;
-}
-
-/* =========
-   COMMON MODULE SPACING
-   ========= */
-
-#battery,
-#network,
-#pulseaudio {
-  margin: 0px 4px;
-  padding: 0px;
-}
-
-#tray {
-  margin: 0px 0px 0px 8px;
-  padding: 0px;
 }
 
 .hidden {
