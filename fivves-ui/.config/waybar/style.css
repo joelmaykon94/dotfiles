@@ -26,7 +26,7 @@ window#waybar {
 
 * {
   letter-spacing: 0px;
-  min-height: 30px;
+  min-height: 28px;
 }
 
 button {
@@ -92,17 +92,17 @@ tooltip label {
 #clock,
 #tray {
   background-color: @surface_bg;
-  border-radius: 12px;
+  border-radius: 10px;
   outline: 1px solid @outline_subtle;
 }
 
 #workspaces {
-  padding: 0px 8px;
+  padding: 0px 6px;
 }
 
 .modules-center {
-  padding: 0px 12px;
-  margin: 6px 6px 0px 6px;
+  padding: 0px 10px;
+  margin: 6px 4px 0px 4px;
 }
 
 #custom-ai-usagebar,
@@ -116,13 +116,13 @@ tooltip label {
 #pulseaudio,
 #battery,
 #clock {
-  padding: 0px 9px;
-  margin-left: 5px;
+  padding: 0px 7px;
+  margin-left: 4px;
 }
 
 #tray {
-  padding: 0px 8px;
-  margin-left: 5px;
+  padding: 0px 6px;
+  margin-left: 4px;
 }
 
 #temperature.critical {
@@ -146,7 +146,7 @@ tooltip label {
   font-family: JetBrainsMono Nerd Font;
   font-size: inherit;
   margin: 0px;
-  padding: 0px 6px;
+  padding: 0px 5px;
 }
 
 #workspaces button:hover,
