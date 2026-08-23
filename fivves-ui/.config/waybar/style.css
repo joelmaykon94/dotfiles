@@ -20,7 +20,7 @@ window#waybar {
   background-color: @surface_transparent;
   color: @foreground;
   font-family: JetBrainsMono Nerd Font;
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 2px;
 }
 
@@ -72,7 +72,7 @@ tooltip label {
 }
 
 .modules-right {
-  margin: 6px 12px 0px 0px;
+  margin: 6px 8px 0px 0px;
 }
 
 /* Chip containers */
@@ -80,12 +80,14 @@ tooltip label {
 #window,
 .modules-center,
 #custom-ai-usagebar,
+#custom-gpu,
 #cpu,
 #temperature,
 #memory,
-#custom-gpu,
-#pulseaudio,
+#disk,
+#custom-docker,
 #network,
+#pulseaudio,
 #battery,
 #clock,
 #tray {
@@ -99,32 +101,28 @@ tooltip label {
 }
 
 .modules-center {
-  padding: 0px 14px;
-  margin: 6px 8px 0px 8px;
+  padding: 0px 12px;
+  margin: 6px 6px 0px 6px;
 }
 
 #custom-ai-usagebar,
+#custom-gpu,
 #cpu,
 #temperature,
 #memory,
-#custom-gpu,
-#clock {
-  padding: 0px 10px;
-  margin-left: 6px;
-}
-
-/* Generous spacing for single icon modules (sound, wifi, battery) */
-#pulseaudio,
+#disk,
+#custom-docker,
 #network,
-#battery {
-  padding: 0px 12px;
-  margin-left: 6px;
-  min-width: 24px;
+#pulseaudio,
+#battery,
+#clock {
+  padding: 0px 9px;
+  margin-left: 5px;
 }
 
 #tray {
-  padding: 0px 10px;
-  margin-left: 6px;
+  padding: 0px 8px;
+  margin-left: 5px;
 }
 
 #temperature.critical {
