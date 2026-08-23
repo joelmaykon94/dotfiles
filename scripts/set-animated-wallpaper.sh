@@ -33,6 +33,7 @@ killall swaybg 2>/dev/null || true
 killall mpvpaper 2>/dev/null || true
 
 # Inicia o mpvpaper com aceleração de GPU (Intel/NVIDIA), sem áudio e em loop infinito
-mpvpaper -o "no-audio --loop-file=inf --hwdec=auto" '*' "$VIDEO_PATH" >/dev/null 2>&1 &
+nohup mpvpaper -o "no-audio --loop-file=inf --hwdec=auto" '*' "$VIDEO_PATH" >/dev/null 2>&1 &
+disown
 
 echo "✅ Papel de parede animado ativado!"
