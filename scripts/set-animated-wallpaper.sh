@@ -26,18 +26,13 @@ if [ ! -f "$VIDEO_PATH" ]; then
     exit 1
 fi
 
-echo "🎬 Ativando wallpaper animado otimizado: $VIDEO_PATH"
+echo "🎬 Ativando wallpaper animado: $VIDEO_PATH"
 
 # Encerra instâncias anteriores do swaybg e mpvpaper
 killall swaybg 2>/dev/null || true
 killall mpvpaper 2>/dev/null || true
 
-# Otimizações para manter a temperatura baixa:
-# 1. --hwdec=auto (decodificação por hardware)
-# 2. --vf=fps=30 (limita animação de fundo em 30fps para cortar carga de GPU/CPU pela metade)
-# 3. --no-audio (sem processamento de som)
-# 4. --scale=bilinear (baixo uso de shaders)
-nohup mpvpaper -o "no-audio --loop-file=inf --hwdec=auto --vf=fps=30 --scale=bilinear" '*' "$VIDEO_PATH" >/dev/null 2>&1 &
-disown
+# Inicia o mpvpaper desacoplado via setsid em segundo plano permanente
+setsid mpvpaper -o "no-audio --loop-file=inf --hwdec=auto --vf=fps=30" '*' "$VIDEO_PATH" >/dev/null 2>&1 &
 
-echo "✅ Papel de parede animado ativado com perfil térmico otimizado!"
+echo "✅ Papel de parede animado ativo!"
