@@ -144,13 +144,13 @@
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format": "{icon}",
-    "format-wifi": "{icon} ⇣{bandwidthDownBytes}",
-    "format-ethernet": "󰀂 ⇣{bandwidthDownBytes}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰀂",
     "format-disconnected": "󰤮",
-    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}\nIP: {ipaddr}/{cidr}",
-    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}\nIP: {ipaddr}/{cidr}",
+    "tooltip-format-wifi": "Wi-Fi: {essid} ({frequency} GHz)\nSinal: {signalStrength}%\n⇣ Download: {bandwidthDownBytes}  ⇡ Upload: {bandwidthUpBytes}\nIP: {ipaddr}/{cidr}",
+    "tooltip-format-ethernet": "Ethernet\n⇣ Download: {bandwidthDownBytes}  ⇡ Upload: {bandwidthUpBytes}\nIP: {ipaddr}/{cidr}",
     "tooltip-format-disconnected": "Disconnected",
-    "interval": 2,
+    "interval": 3,
     "on-click": "omarchy-launch-wifi"
   },
 
