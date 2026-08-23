@@ -1,5 +1,6 @@
 acer-wmi-battery-dkms
 ai-usagebar
+bibata-cursor-theme-bin
 google-chrome
 intellij-idea-ultimate-edition
 nbfc-linux
