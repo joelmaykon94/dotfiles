@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+gui:
+  nerdFontsVersion: "3"
+  showFileIcons: true
+  border: "rounded"
+  mouseEvents: true
+  sideBySideDiff: auto
+  expandFocusedSidePanel: true
+  mainPanelSplitMode: "flexible"
+  theme:
+    activeBorderColor:
+      - "#00f0ff"
+      - "bold"
+    inactiveBorderColor:
+      - "#595959"
+    selectedLineBgColor:
+      - "#2e3440"
+    selectedRangeBgColor:
+      - "#3b4252"
+
+git:
+  paging:
+    colorArg: "always"
+    pager: "delta --dark --paging=never 2>/dev/null || cat"
+  commit:
+    signOff: false
+    autoWrapCommitMsg: true
+    autoWrapWidth: 72
+  merging:
+    manualCommit: false
+    args: ""
+  parseEmoji: true
+
+update:
+  method: "never"
+
+promptToReturnFromSubprocess: false
+notARepository: "skip"

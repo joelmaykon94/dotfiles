@@ -1,0 +1,30 @@
+gui:
+  scrollHeight: 2
+  scrollPastBottom: true
+  sidePanelWidth: 0.3333
+  expandFocusedSidePanel: true
+  mainPanelSplitMode: "flexible"
+  showAllContainers: true
+  returnImmediately: false
+  wrapMainPanel: true
+
+reporting: "off"
+
+commandTemplates:
+  dockerCompose: "docker compose"
+  restartService: "{{ .DockerCompose }} restart {{ .Service.Name }}"
+  stopService: "{{ .DockerCompose }} stop {{ .Service.Name }}"
+  serviceLogs: "{{ .DockerCompose }} logs --since=60m --follow {{ .Service.Name }}"
+  viewItemLogs: "{{ .DockerCompose }} logs --since=60m --follow {{ .Item.Name }}"
+
+customCommands:
+  containers:
+    - name: "Exec into container (bash/sh)"
+      command: "docker exec -it {{ .Container.ID }} sh -c 'bash || sh'"
+      description: "Open an interactive shell in the selected container"
+      subprocess: true
+  images:
+    - name: "Prune unused images"
+      command: "docker image prune -f"
+      description: "Remove dangling images"
+      subprocess: false
