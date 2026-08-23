@@ -17,11 +17,10 @@ gui:
       - "#2e3440"
     selectedRangeBgColor:
       - "#3b4252"
-
 git:
-  paging:
-    colorArg: "always"
-    pager: "delta --dark --paging=never 2>/dev/null || cat"
+  diffRenderers:
+    - colorArg: "always"
+      command: "delta --dark --paging=never 2>/dev/null || cat"
   commit:
     signOff: false
     autoWrapCommitMsg: true
@@ -30,9 +29,7 @@ git:
     manualCommit: false
     args: ""
   parseEmoji: true
-
 update:
   method: "never"
-
 promptToReturnFromSubprocess: false
 notARepository: "skip"
