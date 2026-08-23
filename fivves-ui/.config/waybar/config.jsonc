@@ -14,6 +14,7 @@
   ],
 
   "modules-right": [
+    "custom/ai-usagebar",
     "cpu",
     "temperature",
     "memory",
@@ -80,6 +81,16 @@
       "^(.*) - com\\.jeffser\\.Nocturne$": " $1",
       "^(.*) - WhatsApp Desktop$": " $1"
     }
+  },
+
+  "custom/ai-usagebar": {
+    "exec": "ai-usagebar",
+    "return-type": "json",
+    "interval": 60,
+    "signal": 13,
+    "tooltip": true,
+    "on-scroll-up": "ai-usagebar --cycle-next",
+    "on-scroll-down": "ai-usagebar --cycle-prev"
   },
 
   "cpu": {

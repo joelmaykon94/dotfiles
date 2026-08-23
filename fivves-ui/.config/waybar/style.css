@@ -95,6 +95,7 @@ tooltip label {
 #workspaces,
 #window,
 .modules-center,
+#custom-ai-usagebar,
 #cpu,
 #temperature,
 #memory,
@@ -118,6 +119,7 @@ tooltip label {
   margin: 6px 8px 0px 8px;
 }
 
+#custom-ai-usagebar,
 #cpu,
 #temperature,
 #memory,
