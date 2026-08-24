@@ -70,13 +70,20 @@ for pkg in "${PACKAGES[@]}"; do
     if [ -d "$DOTFILES_DIR/$pkg" ]; then
         log_info "  -> Aplicando módulo: $pkg"
         # Cria diretórios pai se não existirem
-        mkdir -p "$HOME/.config"
+        mkdir -p "$HOME/.config" "$HOME/.gemini/antigravity-cli" "$HOME/.agents/skills"
         stow -v -R -t "$HOME" "$pkg" 2>&1 | sed 's/^/     /'
     fi
 done
 log_success "Symlinks criados com sucesso!"
 
-# 7. Configuração de Segurança (Firewall UFW)
+# 7. Sincronizar AI Workspace Commons (se presente)
+COMMONS_SYNC="$HOME/Projects/ai-workspace-commons/scripts/sync-global-skills.sh"
+if [ -f "$COMMONS_SYNC" ]; then
+    log_info "Sincronizando skills globais do ai-workspace-commons..."
+    bash "$COMMONS_SYNC" 2>&1 | sed 's/^/     /' || log_warn "Aviso ao sincronizar skills."
+fi
+
+# 8. Configuração de Segurança (Firewall UFW)
 if command -v ufw &>/dev/null; then
     log_info "Configurando Firewall (UFW)..."
     sudo ufw default deny incoming || true
@@ -85,7 +92,7 @@ if command -v ufw &>/dev/null; then
     log_success "UFW ativo e configurado com segurança!"
 fi
 
-# 8. Criar template de segredos locais se não existir
+# 9. Criar template de segredos locais se não existir
 if [ ! -f "$HOME/.zshrc.local" ]; then
     cat << 'EOF' > "$HOME/.zshrc.local"
 # ==============================================================================
