@@ -43,23 +43,45 @@ O `ai-memory` roda localmente como um serviço de usuário do Systemd:
 
 ```bash
 # Verificar status do servidor e quantidade de páginas na memória:
-mem status
+ai-memory status
 
 # Abrir o painel web visual no navegador:
-mem-web
+xdg-open http://127.0.0.1:49374/web
 
 # Buscar decisões ou arquiteturas na memória de projetos:
-mem search "configuração de banco"
-mem search "regras do hyprland"
+ai-memory search "configuração de banco"
+ai-memory search "regras do hyprland"
 
 # Iniciar o Antigravity com continuidade gerenciada:
-mem run agy
+ai-memory run agy
+
+# Continuar a sessão anterior de onde parou:
+ai-memory continue
 
 # Gravar uma página de documentação manual na wiki:
-mem write-page --title "Arquitetura" --body "Decisão: Usamos FastFetch e Waybar com floating chips"
+ai-memory write-page --title "Arquitetura" --body "Decisão: Usamos FastFetch e Waybar com floating chips"
 
 # Instalar MCP em outros agentes:
-mem install-mcp --client claude-code --apply
-mem install-mcp --client cursor --apply
-mem install-mcp --client open-code --apply
+ai-memory install-mcp --client claude-code --apply
+ai-memory install-mcp --client cursor --apply
+ai-memory install-mcp --client open-code --apply
 ```
+
+---
+
+## 🧰 3. AI-Workspace-Commons & Antigravity CLI
+
+O repositório **[`ai-workspace-commons`](https://github.com/joelmaykon94/ai-workspace-commons)** centraliza os workflows, regras de GitFlow e skills avançadas para os assistentes de código.
+
+### Fluxo de Trabalho nos Projetos:
+1. **Conectar Novo Projeto:**
+   ```bash
+   cd ~/Projects/meu-novo-projeto
+   ~/Projects/ai-workspace-commons/scripts/attach-workspace.sh
+   ```
+2. **Iniciar Antigravity CLI:**
+   ```bash
+   ai-memory run agy
+   ```
+3. **Skills Globais:** Sincronizadas automaticamente pelo `install.sh` do dotfiles ou manualmente via `~/Projects/ai-workspace-commons/scripts/sync-global-skills.sh`.
+
